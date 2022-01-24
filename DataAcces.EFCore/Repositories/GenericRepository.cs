@@ -41,5 +41,10 @@ namespace DataAcces.EFCore
         {
             _context.Set<T>().RemoveRange(entities);
         }
+        public void RemoveById(int id)
+        {
+            T toRemove = _context.Set<T>().Find(id);
+            _context.Set<T>().Remove(toRemove);
+        }
     }
 }

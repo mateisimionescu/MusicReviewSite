@@ -12,6 +12,7 @@ namespace Domain.Interfaces
         void Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Remove(T entity);
+        void RemoveById(int Id);
         void RemoveRange(IEnumerable<T> entities);
     }
 }
