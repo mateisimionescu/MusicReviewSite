@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{CFC56436-B436-45AE-A080-F4AA406B1D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcces.EFCore", "DataAcces.EFCore\DataAcces.EFCore.csproj", "{E9913271-6EE3-424E-AF5B-F90BCD1EDBA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{94277AA6-8F7F-46A5-AC5E-6E105F8D9027}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFC56436-B436-45AE-A080-F4AA406B1D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC56436-B436-45AE-A080-F4AA406B1D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC56436-B436-45AE-A080-F4AA406B1D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC56436-B436-45AE-A080-F4AA406B1D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9913271-6EE3-424E-AF5B-F90BCD1EDBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9913271-6EE3-424E-AF5B-F90BCD1EDBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9913271-6EE3-424E-AF5B-F90BCD1EDBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9913271-6EE3-424E-AF5B-F90BCD1EDBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94277AA6-8F7F-46A5-AC5E-6E105F8D9027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94277AA6-8F7F-46A5-AC5E-6E105F8D9027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94277AA6-8F7F-46A5-AC5E-6E105F8D9027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94277AA6-8F7F-46A5-AC5E-6E105F8D9027}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {676306DB-B354-4CE4-A314-29B6215E6D53}
+	EndGlobalSection
+EndGlobal
