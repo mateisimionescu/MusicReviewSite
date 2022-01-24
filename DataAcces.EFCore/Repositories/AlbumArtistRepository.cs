@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Domain.Entities;
 using Domain.Interfaces;
 
@@ -8,6 +9,12 @@ namespace DataAcces.EFCore.Repositories
     {
         public AlbumArtistRepository(ApplicationContext context) : base(context)
         {
+        }
+
+        public void removeByAlbumId(int id)
+        {
+            _context.RemoveRange(_context.AlbumArtists.Where(x => x.AlbumId == id));
+            _context.SaveChanges();
         }
     }
 }

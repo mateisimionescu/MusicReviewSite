@@ -48,6 +48,25 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            if (_unitOfWork.Albums.Find(al => al.Id.Equals(id)) == null)
+                return NotFound("Album does not exist!");
 
+            _unitOfWork.Albums.RemoveById(id);
+            _unitOfWork.AlbumArtists.removeByAlbumId(id);
+            _unitOfWork.Complete();
+
+            return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult GetAllAlbums()
+        {
+            var Albums = _unitOfWork.Albums.GetAllAlbums();
+            _unitOfWork.Complete();
+            return Ok(Albums);
+        }
     }
 }
