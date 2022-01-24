@@ -40,10 +40,11 @@ namespace WebApi
             services.AddTransient<IArtistRepository, ArtistRepository>();
             services.AddTransient<IReviewRepository, ReviewRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IAlbumArtistRepository, AlbumArtistRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             #endregion
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
         }
 

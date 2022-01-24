@@ -14,5 +14,6 @@ namespace Domain.Interfaces
         void Remove(T entity);
         void RemoveById(int Id);
         void RemoveRange(IEnumerable<T> entities);
+        List<T> RowsById(List<int> Ids);
     }
 }

@@ -11,5 +11,6 @@ namespace DataAcces.EFCore
         DbSet<Album> Albums { get; set; }
         DbSet<Review> Reviews { get; set; }
         DbSet<Artist> Artists { get; set; }
+        DbSet<AlbumArtist> AlbumArtists { get; set; }
     }
 }

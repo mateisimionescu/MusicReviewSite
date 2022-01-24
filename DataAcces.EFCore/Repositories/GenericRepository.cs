@@ -46,5 +46,18 @@ namespace DataAcces.EFCore
             T toRemove = _context.Set<T>().Find(id);
             _context.Set<T>().Remove(toRemove);
         }
+        public List<T> RowsById(List<int> Ids)
+        {
+            List<T> tempList = new List<T>();
+            foreach (var id in Ids)
+            {
+                T temp = _context.Set<T>().Find(id);
+
+                if (temp != null)
+                    tempList.Add(temp);
+            }
+
+            return tempList;
+        }
     }
 }

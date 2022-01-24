@@ -13,6 +13,7 @@ namespace DataAcces.EFCore.UnitOfWork
             Artists = new ArtistRepository(_context);
             Albums = new AlbumRepository(_context);
             Reviews = new ReviewRepository(_context);
+            AlbumArtists = new AlbumArtistRepository(_context);
             Users = new UserRepository(_context);
         }
 
@@ -20,6 +21,7 @@ namespace DataAcces.EFCore.UnitOfWork
         public IAlbumRepository Albums { get; private set; }
         public IReviewRepository Reviews { get; private set; }
         public IUserRepository Users { get; private set; }
+        public IAlbumArtistRepository AlbumArtists { get; private set; }
 
 
         public int Complete()

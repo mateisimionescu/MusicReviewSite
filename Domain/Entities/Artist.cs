@@ -7,13 +7,13 @@ namespace Domain.Entities
     {
         public Artist()
         {
-            this.Albums = new HashSet<Album>();
+            this.AlbumArtists = new List<AlbumArtist>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public virtual ICollection<Album> Albums { get; set; }
+        public List<AlbumArtist> AlbumArtists { get; set; }
 
     }
 }

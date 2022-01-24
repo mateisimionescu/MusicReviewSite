@@ -55,6 +55,7 @@ namespace WebApi.Controllers
         public IActionResult GetAllArtists()
         {
             var Artists = _unitOfWork.Artists.GetAll();
+            _unitOfWork.Complete();
             return Ok(Artists);
         }
 
@@ -67,7 +68,6 @@ namespace WebApi.Controllers
             {
                 old.Name = newArtist.Name;
                 old.Description = newArtist.Description;
-                old.Albums = newArtist.Albums;
                 _unitOfWork.Complete();
                 return Ok(old.Id);
             }

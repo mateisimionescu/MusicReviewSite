@@ -7,7 +7,7 @@ namespace Domain.Entities
     {
         public Album()
         {
-            this.Artists = new HashSet<Artist>();
+            this.AlbumArtists = new List<AlbumArtist>();
         }
 
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace Domain.Entities
         public DateTime PublishDate { get; set; }
         public string Genre { get; set; }
         public string Description { get; set; }
-        public virtual ICollection<Artist> Artists { get; set; }
+        public List<AlbumArtist> AlbumArtists { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace Domain.Interfaces
         IAlbumRepository Albums { get; }
         IReviewRepository Reviews { get; }
         IUserRepository Users { get; }
+        IAlbumArtistRepository AlbumArtists { get; }
         int Complete();
     }
 }
