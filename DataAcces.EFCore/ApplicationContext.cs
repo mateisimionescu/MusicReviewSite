@@ -10,8 +10,9 @@ namespace DataAcces.EFCore
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
         }
-        public DbSet<Developer> Developers { get; set; }
-        public DbSet<Project> Projects { get; set; }
-
+        public DbSet<User> Users { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Artist> Artists { get; set; }
     }
 }

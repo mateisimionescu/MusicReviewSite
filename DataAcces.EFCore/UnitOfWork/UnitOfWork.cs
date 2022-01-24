@@ -10,11 +10,18 @@ namespace DataAcces.EFCore.UnitOfWork
         public UnitOfWork(ApplicationContext context)
         {
             _context = context;
-            Developers = new DeveloperRepository(_context);
-            Projects = new ProjectRepository(_context);
+            Artists = new ArtistRepository(_context);
+            Albums = new AlbumRepository(_context);
+            Reviews = new ReviewRepository(_context);
+            Users = new UserRepository(_context);
         }
-        public IDeveloperRepository Developers { get; private set; }
-        public IProjectRepository Projects { get; private set; }
+
+        public IArtistRepository Artists { get; private set; }
+        public IAlbumRepository Albums { get; private set; }
+        public IReviewRepository Reviews { get; private set; }
+        public IUserRepository Users { get; private set; }
+
+
         public int Complete()
         {
             return _context.SaveChanges();

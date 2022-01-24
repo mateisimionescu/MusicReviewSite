@@ -6,8 +6,6 @@ using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
@@ -20,26 +18,21 @@ namespace WebApi.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult GetPopularDevelopers([FromQuery] int count)
+        /*public IActionResult GetPopularDevelopers([FromQuery] int count)
         {
             var popularDevelopers = _unitOfWork.Developers.GetPopularDevelopers(count);
             return Ok(popularDevelopers);
-        }
+        }*/
 
         [HttpPost]
         public IActionResult AddDeveloperAndProject()
         {
-            var developer = new Developer
+            var artist = new Artist
             {
-                Followers = 35,
-                Name = "Mukesh Murugan"
+                Name = "deadmau5",
+                Description = "It's cool"
             };
-            var project = new Project
-            {
-                Name = "codewithmukesh"
-            };
-            _unitOfWork.Developers.Add(developer);
-            _unitOfWork.Projects.Add(project);
+            _unitOfWork.Artists.Add(artist);
             _unitOfWork.Complete();
             return Ok();
         }

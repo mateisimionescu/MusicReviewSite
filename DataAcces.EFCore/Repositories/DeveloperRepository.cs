@@ -6,14 +6,14 @@ using Domain.Interfaces;
 
 namespace DataAcces.EFCore.Repositories
 {
-    public class DeveloperRepository : GenericRepository<Developer>, IDeveloperRepository
+    public class DeveloperRepository
     {
-        public DeveloperRepository(ApplicationContext context) : base(context)
+        /*public DeveloperRepository(ApplicationContext context) : base(context)
         {
         }
         public IEnumerable<Developer> GetPopularDevelopers(int count)
         {
             return _context.Developers.OrderByDescending(d => d.Followers).Take(count).ToList();
-        }
+        }*/
     }
 }

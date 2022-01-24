@@ -7,8 +7,9 @@ namespace DataAcces.EFCore
 {
     public interface IApplicationContext
     {
-        DbSet<Developer> Developers { get; set; }
-        DbSet<Project> Projects { get; set; }
-
+        DbSet<User> Users { get; set; }
+        DbSet<Album> Albums { get; set; }
+        DbSet<Review> Reviews { get; set; }
+        DbSet<Artist> Artists { get; set; }
     }
 }

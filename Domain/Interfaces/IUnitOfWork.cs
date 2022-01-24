@@ -3,8 +3,10 @@ namespace Domain.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IDeveloperRepository Developers { get; }
-        IProjectRepository Projects { get; }
+        IArtistRepository Artists { get; }
+        IAlbumRepository Albums { get; }
+        IReviewRepository Reviews { get; }
+        IUserRepository Users { get; }
         int Complete();
     }
 }

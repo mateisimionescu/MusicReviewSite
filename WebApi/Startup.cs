@@ -36,8 +36,10 @@ namespace WebApi
 
             #region Repositories
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddTransient<IDeveloperRepository, DeveloperRepository>();
-            services.AddTransient<IProjectRepository, ProjectRepository>();
+            services.AddTransient<IAlbumRepository, AlbumRepository>();
+            services.AddTransient<IArtistRepository, ArtistRepository>();
+            services.AddTransient<IReviewRepository, ReviewRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             #endregion
 
