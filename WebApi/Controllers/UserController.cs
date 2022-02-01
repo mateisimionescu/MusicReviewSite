@@ -50,5 +50,22 @@ namespace WebApi.Controllers
             else return BadRequest("Wrong password!");
         }
 
+        [HttpGet]
+        public IActionResult GetByID(int id)
+        {
+            User user = _unitOfWork.Users.GetById(id);
+            if (user == null) return NotFound();
+            else return Ok(user);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            User user = _unitOfWork.Users.GetById(id);
+            if (user == null) return NotFound();
+            _unitOfWork.Users.Remove(user);
+            _unitOfWork.Complete();
+            return Ok("User " + user.Username + " removed!");
+        }
     }
 }
