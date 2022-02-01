@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -38,6 +39,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         public IActionResult Delete(int id)
         {
             if (_unitOfWork.Artists.ArtistExists(id))
@@ -59,6 +61,7 @@ namespace WebApi.Controllers
             return Ok(Artists);
         }
 
+        [Authorize]
         [HttpPut]
         public IActionResult Update(int id, Artist newArtist)
         {

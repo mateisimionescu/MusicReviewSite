@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,9 +21,12 @@ namespace WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        public UserController(IUnitOfWork unitOfWork)
+        private IConfiguration _config;
+
+        public UserController(IUnitOfWork unitOfWork, IConfiguration config)
         {
             _unitOfWork = unitOfWork;
+            _config = config;
         }
 
         [HttpPost]
@@ -36,6 +45,7 @@ namespace WebApi.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Login(User user)
         {
@@ -45,7 +55,8 @@ namespace WebApi.Controllers
 
             if (BCrypt.Net.BCrypt.Verify(user.Password, tempUser.Password))
             {
-                return Ok("Login succesful!");
+                var tokenString = Helpers.JWTAuth.GenerateJSONWebToken(tempUser, _config);
+                return Ok(new { token = tokenString });
             }
             else return BadRequest("Wrong password!");
         }
@@ -59,6 +70,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         public IActionResult Delete(int id)
         {
             User user = _unitOfWork.Users.GetById(id);

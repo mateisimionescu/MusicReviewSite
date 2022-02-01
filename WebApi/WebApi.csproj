@@ -10,6 +10,7 @@
     <None Remove="Helpers\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
@@ -18,6 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.22" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAcces.EFCore\DataAcces.EFCore.csproj">

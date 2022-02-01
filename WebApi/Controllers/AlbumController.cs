@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using WebApi.Helpers;
@@ -48,6 +49,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpDelete]
         public IActionResult Delete(int id)
         {
