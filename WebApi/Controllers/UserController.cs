@@ -73,6 +73,14 @@ namespace WebApi.Controllers
         [Authorize]
         public IActionResult Delete(int id)
         {
+            var isAdmin = "false";
+            if (HttpContext.User.HasClaim(c => c.Type == "isAdmin"))
+            {
+                isAdmin = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "isAdmin").Value;
+            }
+            if (isAdmin == "false")
+                return BadRequest("User is not admin!");
+             
             User user = _unitOfWork.Users.GetById(id);
             if (user == null) return NotFound();
             _unitOfWork.Users.Remove(user);
