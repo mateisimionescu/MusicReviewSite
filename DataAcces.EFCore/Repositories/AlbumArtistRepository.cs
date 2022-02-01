@@ -13,7 +13,7 @@ namespace DataAcces.EFCore.Repositories
 
         public void removeByAlbumId(int id)
         {
-            _context.RemoveRange(_context.AlbumArtists.Where(x => x.AlbumId == id));
+            _context.Remove(_context.AlbumArtists.Where(x => x.AlbumId == id));
             _context.SaveChanges();
         }
     }
